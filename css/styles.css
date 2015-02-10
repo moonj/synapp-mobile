@@ -24,6 +24,7 @@ a {
   box-sizing: border-box;
   color: #fff;
   font-size: 16px;
+  z-index: 9999;
 }
 
 .action {
@@ -262,4 +263,19 @@ h2 {
 .prompt {
   text-align: left;
   padding: 1em 1em 0em 1em;
+}
+
+.create input {
+  width: 100%;
+  border: none;
+  border-top: 1px solid rgba(0,0,0,0.1);
+  border-bottom: 1px solid rgba(0,0,0,0.1);
+  border-radius: 0px;
+  margin: 0px;
+  margin-top: 1em;
+  padding: 0.6em 0.4em;
+  font-size: 16px;
+  float: left;
+  -webkit-appearance: none;
+  outline: none;
 }
