@@ -1,0 +1,16 @@
+.floating-action-button {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: $brand-primary;
+  font-size: 30px;
+  padding: 0em 0.5em 0em 0.5em;
+  color: #fff;
+  border-radius: 900px;
+  text-decoration: none;
+  transition: .2s background-color ease;
+
+  &:hover {
+    background-color: $brand-lighter;
+  }
+}
