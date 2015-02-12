@@ -1,4 +1,5 @@
-$(".problem > .bubble").bind("click tap", function(e) {
+$(".problem.bubble").bind("click tap", function(e) {
+  /* Add overlay to "correct" swiper-slide, not body */
   $("body").addClass("overlay");
   $(".chat").not($(this).parent()).addClass("faded");
   e.stopPropagation();
@@ -8,6 +9,7 @@ $("input").click(function(e) {
   e.stopPropagation();
 });
 
+/* Remove overlay from swiper-slide, not body. Is it clicking body or swiper-slide too? */
 $("body").click(function() {
   $("body").removeClass("overlay");
   $(".chat").removeClass("faded");
