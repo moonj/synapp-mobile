@@ -91,6 +91,7 @@ sizes, pagination, etc.
   height: 100%;
 }
 .swiper-slide {
+  transition: .2s background-color ease;
 	/* Specify Slides's Size: */
 	
 	/*width: 100%;

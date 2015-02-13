@@ -1,1 +1,4 @@
-.DS_Store
+*~
+.*.*sw*
+**/.sass-cache
+**/.sass-cache/*

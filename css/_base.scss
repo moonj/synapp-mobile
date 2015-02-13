@@ -1,14 +1,5 @@
-$brand-primary: #3C72B8;
-$brand-lighter: #689DE3;
-$heading-text-color: #4E5B9A;
-$body-text-color: #8C94B9;
-$chat-bubble: #eaeaea;
-
-* {
-  font-family: "Avenir", "Lato", "Helvetica Neue", "Helvetica", sans-serif;
-}
-
 body {
+  font-family: "Avenir", "Lato", "Helvetica Neue", "Helvetica", sans-serif;
   transition: .1s background-color ease;
   margin: 0px;
   padding: 0px;
@@ -41,9 +32,9 @@ body {
       padding: 0em 0.4em;
       position: fixed;
 
-      .left {
+      &.left {
         left: 0.3em;
-        
+
         .button-back {
           width: 0.8em;
         }
@@ -69,7 +60,7 @@ body {
         float: left;
         opacity: 0.3;
 
-        .active {
+        &.active {
           opacity: 1;
         }
       }
@@ -104,15 +95,16 @@ body {
 
     .chat {
       margin: 0em 0.4em;
+      max-width: 80%;
 
-      .faded {
+      &.faded {
         opacity: 0.3;
       }
 
       .bubble {
         display: inline-block;
-        max-width: 80%;
         font-size: 16px;
+        max-width: 100%;
         margin: 0.6em 0.4em;
         border-radius: 0.6em;
         background-color: $chat-bubble;
@@ -123,7 +115,7 @@ body {
           margin: 0px;
         }
 
-        .problem {
+        &.problem {
           background-color: $brand-lighter;
           color: white;
         }
@@ -163,6 +155,8 @@ body {
     }
 
     .chat-right {
+      float: right;
+
       & > .author p {
         position: absolute;
         top: 0.3em;
@@ -192,6 +186,8 @@ body {
         color: rgba(255, 255, 255, 0.5);
         text-transform: uppercase;
         font-size: 12px;
+        margin: 0px;
+        font-weight: 300;
       }
 
       p {
