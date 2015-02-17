@@ -1,6 +1,8 @@
-$(".problem.bubble").bind("click tap", function(e) {
+$(".problem.bubble").bind("click", function(e) {
   $(".swiper-slide").addClass("overlay");
   $(".chat").not($(this).parent()).addClass("faded");
+  $("#response").focus();  
+  $("#skip").removeClass("hidden");
   e.stopPropagation();
 });
 
@@ -11,6 +13,12 @@ $("input").click(function(e) {
 $("body").click(function() {
   $(".swiper-slide").removeClass("overlay");
   $(".chat").removeClass("faded");
+  $("#skip").addClass("hidden");
+});
+
+$("#action-type-sheet-toggle").click(function() {
+  $(".plus").toggleClass("cancel");
+  $(".action-type-sheet").toggleClass("active");
 });
 
 $(function(){

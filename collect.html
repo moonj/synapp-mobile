@@ -8,18 +8,14 @@
 <body>
   <div class="nav">
     <div class="nav-button left">
-      <a href="index.html">
-        <img src="img/button-back.png" class="button-back">
+      <a href="chat.html">
+        Cancel
       </a>
     </div>
-    <div class="title segmented">
-      <ul>
-        <li><a href="chat.html">Chat</a></li>
-        <li class="active">Summary</li>
-      </ul>
+    <div class="nav-button right">
+      <a href="chat.html">Done</a>
     </div>
-    <div class="prompt">
-      <h2 class="action-type">Collect and Choose</h2>
+    <div class="title">
     What should we eat today? 
     </div>
   </div>
@@ -27,10 +23,37 @@
       +
     </a>
   </div>
-  <div class="container extra-padding">
-    <div class="candidate cell">Lotus Thai Bistro</div>
-    <div class="candidate cell">Domino's</div>
-    <div class="candidate cell">Chinese</div>
+  <div class="container">
+    <div class="candidate cell">
+      Lotus Thai Bistro
+      <ul class="faces">
+        <li><img src="img/smiley.png"></li>
+        <li><img src="img/smiley.png"></li>
+        <li><img src="img/smiley.png"></li>
+        <li><img src="img/smiley.png"></li>
+        <li><img src="img/frowney.png"</li>
+      </ul>
+    </div>
+    <div class="candidate cell">
+      Domino's
+      <ul class="faces">
+        <li><img src="img/smiley.png"></li>
+        <li><img src="img/smiley.png"></li>
+        <li><img src="img/frowney.png"</li>
+      </ul>
+    </div>
+    <div class="candidate cell">
+      Chinese
+      <ul class="faces">
+        <li><img src="img/smiley.png"></li>
+        <li><img src="img/smiley.png"></li>
+        <li><img src="img/frowney.png"</li>
+        <li><img src="img/frowney.png"</li>
+      </ul>
+    </div>
   </div>
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+  <script src="js/hammer.js"></script>
+  <script src="js/synapp-smileys.js"></script>
 </body>
 </html>

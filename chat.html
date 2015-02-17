@@ -67,16 +67,34 @@
             </div>
         </div>
       </div>
+      </div>
+  </div>
+
+      <!--
+      <div class="modal">
+        <iframe src="collect.html"></iframe>
+      </div>
+      -->
 
       <div class="message-input">
+        <a href="#" id="action-type-sheet-toggle"><img src="img/plus.png" class="plus"></a>
+        <div class="action-type-sheet">
+          <ul class="action-types">
+            <li><img src="img/thumbsup.png">Create a poll</li>
+            <li><img src="img/calendar.png">Find a time to meet</li>
+            <li><img src="img/announcement.png">Make an announcement</li>
+          </ul>
+        </div>
         <form>
-          <input type="text" placeholder="Type a response...">
+          <input id="response" type="text" placeholder="Type a response...">
           <input type="submit" value="Send">
+          <input id="skip" class="hidden" type="submit" value="Skip">
         </form>
       </div>
-    </div>
-  </div>
+
+
    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+   <script src="http://hammerjs.github.io/dist/hammer.min.js"></script>
    <script src="js/synapp.js"></script>
 </body>
 </html>

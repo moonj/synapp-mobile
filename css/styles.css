@@ -25,6 +25,9 @@ body {
         font-size: 12px;
         margin: 0px;
         font-weight: 300; }
+    body .nav .title {
+      max-width: 70%;
+      margin: 0px auto; }
     body .nav .nav-button {
       padding: 0em 0.4em;
       position: fixed; }
@@ -47,11 +50,12 @@ body {
       body .nav .segmented li.active {
         opacity: 1; }
   body .container {
-    padding-top: 3em; }
+    padding-top: 3em;
+    overflow-x: hidden; }
     body .container.extra-padding {
       padding-top: 6.4em; }
     body .container .cell {
-      padding: 1.2em 1em;
+      padding: 1.2em 0.6em 1.2em 1em;
       border-bottom: 1px solid rgba(0, 0, 0, 0.1); }
       body .container .cell h2 {
         margin: 0px;
@@ -63,6 +67,54 @@ body {
         margin: 0px;
         padding: 0px;
         color: #8C94B9; }
+      body .container .cell .notifications {
+        float: right;
+        position: relative;
+        top: 1em; }
+        body .container .cell .notifications p {
+          background-color: #FAAC59;
+          color: white;
+          font-size: 10px;
+          padding: 0.2em 0.5em;
+          border-radius: 0.4em; }
+      body .container .cell.candidate {
+        position: relative; }
+        body .container .cell.candidate.flash-green {
+          background-color: #81B84B;
+          color: white; }
+        body .container .cell.candidate.flash-red {
+          background-color: #B84B4B;
+          color: white; }
+        body .container .cell.candidate::before {
+          content: url("../img/smiley.png");
+          transform: scale(0.3);
+          -webkit-transform: scale(0.3);
+          top: 0em;
+          position: absolute;
+          left: -3em;
+          z-index: 999; }
+        body .container .cell.candidate::after {
+          content: url("../img/frowney.png");
+          transform: scale(0.3);
+          -webkit-transform: scale(0.3);
+          top: 0em;
+          position: absolute;
+          right: -3em;
+          z-index: 999; }
+        body .container .cell.candidate .faces {
+          float: right;
+          list-style-type: none;
+          display: block;
+          margin-top: 1.2em; }
+          body .container .cell.candidate .faces li {
+            float: left;
+            width: 0.8em;
+            padding-left: 0.2em;
+            opacity: 0.4; }
+            body .container .cell.candidate .faces li img {
+              width: 100%; }
+      body .container .cell.bounce-back {
+        transition: all 0.2s; }
     body .container .chat {
       margin: 0em 0.4em;
       max-width: 80%; }
@@ -133,9 +185,20 @@ body {
       body .container .card p {
         margin: 0px;
         padding-top: 0.2em; }
+    body .container .contacts .cell {
+      padding: 0.8em 0.6em; }
   body a {
     text-decoration: none;
     color: white; }
+  body .modal {
+    overflow: hidden;
+    position: absolute;
+    z-index: 9999;
+    width: 100%; }
+    body .modal iframe {
+      width: 100%;
+      border: none;
+      height: 100%; }
 
 .floating-action-button {
   position: fixed;
@@ -153,6 +216,7 @@ body {
 
 .message-input {
   position: fixed;
+  z-index: 9999;
   bottom: 0px;
   width: 100%;
   margin: 0px;
@@ -160,7 +224,8 @@ body {
   border-top: 1px solid rgba(0, 0, 0, 0.2); }
   .message-input form {
     width: 100%;
-    margin: 0px; }
+    margin: 0px;
+    display: inline; }
   .message-input input[type="text"] {
     font-family: "Avenir", "Lato", "Helvetica Neue", "Helvetica", sans-serif;
     border: none;
@@ -168,9 +233,8 @@ body {
     margin: 0px;
     padding: 0.6em 0.4em;
     /* TODO: Can we make it take everything except the Send button? */
-    width: 80%;
+    width: 70%;
     font-size: 16px;
-    float: left;
     -webkit-appearance: none;
     outline: none; }
   .message-input input[type="submit"] {
@@ -178,27 +242,60 @@ body {
     font-size: 16px;
     float: right;
     text-align: right;
+    margin-left: 1em;
     padding: 0.6em 0.4em;
-    max-width: 20%;
     border: 0px;
     color: #3C72B8;
     background-color: #ffffff;
     outline: none;
     -webkit-appearance: none; }
+  .message-input .hidden {
+    display: none; }
+  .message-input .plus {
+    position: relative;
+    top: 0.5em;
+    left: 0.2em;
+    width: 1.6em;
+    transition: all .2s; }
+    .message-input .plus.cancel {
+      transform: rotate(405deg);
+      -webkit-transform: rotate(405deg); }
+  .message-input .action-type-sheet {
+    position: absolute;
+    bottom: -20em;
+    left: 2em;
+    transition: bottom .3s ease; }
+    .message-input .action-type-sheet .action-types {
+      padding: 0px; }
+      .message-input .action-type-sheet .action-types li {
+        list-style-type: none;
+        background-color: rgba(255, 255, 255, 0.8);
+        padding: 0.6em 2em 0.6em 1.2em;
+        margin-bottom: 0.5em;
+        border-radius: 0.3em;
+        box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.2); }
+        .message-input .action-type-sheet .action-types li img {
+          vertical-align: middle;
+          position: relative;
+          width: 2em;
+          margin-right: 0.6em; }
+    .message-input .action-type-sheet.active {
+      bottom: 2.4em; }
 
-.create-input input {
-  font-family: "Avenir", "Lato", "Helvetica Neue", "Helvetica", sans-serif;
-  width: 100%;
-  border: none;
-  border-top: 1px solid rgba(0, 0, 0, 0.1);
-  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-  border-radius: 0px;
-  margin: 0px;
-  margin-top: 1em;
-  padding: 0.6em 0.4em;
-  font-size: 16px;
-  float: left;
-  -webkit-appearance: none;
-  outline: none; }
+.create-input {
+  margin-bottom: 0; }
+  .create-input input {
+    font-family: "Avenir", "Lato", "Helvetica Neue", "Helvetica", sans-serif;
+    width: 100%;
+    border: none;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 0px;
+    margin: 0px;
+    margin-top: 1em;
+    padding: 0.6em 0.4em;
+    font-size: 16px;
+    -webkit-appearance: none;
+    outline: none; }
 
 /*# sourceMappingURL=styles.css.map */

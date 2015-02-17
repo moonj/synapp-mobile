@@ -35,6 +35,11 @@ body {
       }
     }
 
+    .title {
+      max-width: 70%;
+      margin: 0px auto;
+    }
+
     .nav-button {
       padding: 0em 0.4em;
       position: fixed;
@@ -76,13 +81,14 @@ body {
 
   .container {
     padding-top: 3em;
+    overflow-x: hidden;
 
     &.extra-padding {
       padding-top: 6.4em;
     }
 
     .cell {
-      padding: 1.2em 1em;
+      padding: 1.2em 0.6em 1.2em 1em;
       border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 
       h2 {
@@ -97,6 +103,70 @@ body {
         margin: 0px;
         padding: 0px;
         color: $body-text-color;
+      }
+
+      .notifications {
+        float: right;
+        position: relative;
+        top: 1em;
+
+        p {
+          background-color: $brand-secondary;
+          color: white;
+          font-size: 10px;
+          padding: 0.2em 0.5em;
+          border-radius: 0.4em;
+        }
+      }
+
+      &.candidate {
+        position: relative;
+        &.flash-green {
+          background-color: #81B84B;
+          color: white;
+        }
+        &.flash-red {
+          background-color: #B84B4B;
+          color: white;
+        }
+        &::before {
+          content: url("../img/smiley.png");
+          transform: scale(.3);
+          -webkit-transform: scale(.3);
+          top: 0em;
+          position: absolute;
+          left: -3em;
+          z-index: 999;
+        }
+        &::after {
+          content: url("../img/frowney.png");
+          transform: scale(.3);
+          -webkit-transform: scale(.3);
+          top: 0em;
+          position: absolute;
+          right: -3em;
+          z-index: 999;
+        }
+
+        .faces {
+          float: right;
+          list-style-type: none;
+          display: block;
+          margin-top: 1.2em;
+          li {
+            float: left;
+            width: 0.8em;
+            padding-left: 0.2em;
+            opacity: 0.4;
+            img {
+              width: 100%;
+            }
+          }
+        }
+      }
+
+      &.bounce-back {
+        transition: all 0.2s;
       }
     }
 
@@ -202,10 +272,29 @@ body {
         padding-top: 0.2em;
       }
     }
+
+    .contacts {
+      .cell {
+        padding: 0.8em 0.6em;
+      }
+    }
   }
 
   a {
     text-decoration: none;
     color: white;
+  }
+
+  .modal {
+    overflow: hidden;
+    position: absolute;
+    z-index: 9999;
+    width: 100%;
+
+    iframe {
+      width: 100%;
+      border: none;
+      height: 100%;
+    }
   }
 }

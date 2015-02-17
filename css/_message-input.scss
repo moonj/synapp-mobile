@@ -1,5 +1,6 @@
 .message-input {
   position: fixed;
+  z-index: 9999;
   bottom: 0px;
   width: 100%;
   margin: 0px;
@@ -9,6 +10,7 @@
   form {
     width: 100%;
     margin: 0px;
+    display: inline;
   }
 
   input[type="text"]{
@@ -18,9 +20,8 @@
     margin: 0px;
     padding: 0.6em 0.4em;
     /* TODO: Can we make it take everything except the Send button? */
-    width: 80%;
+    width: 70%;
     font-size: 16px;
-    float: left;
     -webkit-appearance: none;
     outline: none;
   }
@@ -30,12 +31,61 @@
     font-size: 16px;
     float: right;
     text-align: right;
+    margin-left: 1em;
     padding: 0.6em 0.4em;
-    max-width: 20%;
     border: 0px;
     color: $brand-primary;
     background-color: #ffffff;
     outline: none;
     -webkit-appearance: none;
   }
+
+  .hidden {
+    display: none;
+  }
+
+  .plus {
+    position: relative;
+    top: 0.5em;
+    left: 0.2em;
+    width: 1.6em;
+    transition: all .2s;
+
+    &.cancel {
+      transform: rotate(405deg);
+      -webkit-transform: rotate(405deg);
+    }
+  }
+
+  .action-type-sheet {
+    position: absolute;
+    bottom: -20em;
+    left: 2em;
+    transition: bottom .3s ease;
+
+    .action-types {
+      padding: 0px;
+
+      li {
+        list-style-type: none;
+        background-color: rgba(255, 255, 255, 0.8);
+        padding: 0.6em 2em 0.6em 1.2em;
+        margin-bottom: 0.5em;
+        border-radius: 0.3em;
+        box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.2);
+
+        img {
+          vertical-align: middle;
+          position: relative;
+          width: 2em;
+          margin-right: 0.6em;
+        }
+      }
+
+    }
+    &.active {
+      bottom: 2.4em;
+    }
+  }
+
 }
