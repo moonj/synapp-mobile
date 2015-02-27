@@ -5,7 +5,6 @@ function panHandler(elemIndex) {
   return function(e) {
     var elem = $(elems[elemIndex]);
     elem.removeClass("bounce-back");
-    elem.addClass("drag");
     elem.css("left", e.deltaX + "px");
   }
 }

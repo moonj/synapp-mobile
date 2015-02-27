@@ -1,0 +1,23 @@
+.volunteers {
+  position: absolute;
+  list-style-type: none;
+  display: block;
+  margin: 0px;
+  padding: 0px;
+  right: 1em;
+  max-width: 20%;
+
+  li {
+    float: left;
+    padding-left: 0.4em;
+    width: 1.2em;
+
+    img {
+      width: 100%;
+    }
+  }
+
+  .num-volunteers {
+    color: rgba(0, 0, 0, 0.5);
+  }
+}
