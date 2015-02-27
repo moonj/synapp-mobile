@@ -356,4 +356,13 @@ body {
   .volunteers .num-volunteers {
     color: rgba(0, 0, 0, 0.5); }
 
+.checkbox {
+  display: inline-block;
+  vertical-align: middle;
+  width: 1em;
+  height: 1em;
+  border-radius: 0.3em;
+  margin: -0.2em 0.4em 0em 0em;
+  border: 2px solid #3C72B8; }
+
 /*# sourceMappingURL=styles.css.map */
