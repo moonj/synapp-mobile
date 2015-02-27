@@ -125,15 +125,10 @@ body {
         font-size: 12px;
         color: rgba(0, 0, 0, 0.3); }
         body .container .cell .calendar-bar .time {
-          padding: 0.5em 1.2em;
           top: 0em;
           position: absolute; }
-          body .container .cell .calendar-bar .time.start {
-            left: 0em; }
-          body .container .cell .calendar-bar .time.end {
-            right: 0em; }
           body .container .cell .calendar-bar .time.busy {
-            background-color: rgba(118, 145, 218, 0.2); }
+            border-top: 4px solid rgba(118, 145, 218, 0.2); }
       body .container .cell.bounce-back {
         transition: all 0.2s; }
     body .container .chat {
