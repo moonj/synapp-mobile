@@ -13,16 +13,24 @@ function panEndHandler(elemIndex) {
   return function(e) {
     var elem = $(elems[elemIndex]);
     elem.addClass("bounce-back");
-    if(e.offsetDirection == Hammer.DIRECTION_LEFT) {
+    if(e.offsetDirection == Hammer.DIRECTION_LEFT && Math.abs(e.deltaX) > 50) {
       elem.addClass("flash-green");
       setTimeout(function() {
         elem.removeClass("flash-green")
       }, 400);
-    } else if (e.offsetDirection == Hammer.DIRECTION_RIGHT) {
-      elem.addClass("flash-red");
-      setTimeout(function() {
-        elem.removeClass("flash-red")
-      }, 400);
+    } else if (e.offsetDirection == Hammer.DIRECTION_RIGHT && Math.abs(e.deltaX) > 50) {
+      if(elem.hasClass("calendar")) {
+        elem.css("left", "-100%");
+        setTimeout(function() {
+          elem.remove();
+        }, 200);
+        return;
+      } else {
+        elem.addClass("flash-red");
+        setTimeout(function() {
+          elem.removeClass("flash-red")
+        }, 400);
+      }
     }
     elem.css("left", "0px");
   }
