@@ -1,9 +1,19 @@
-.free-time {
+.free-time, .busy-time {
   position: absolute;
-  width: 100%;
-  font-size: 16px;
-  height: 4em;
+  width: 80%;
+  left: 3em;
+  border-radius: 0.5em;
+}
+
+.busy-time {
+  background-color: rgba(118, 145, 218, 0.2);
+  border: 4px solid rgba(118, 145, 218, 0);
+  color: rgba(118, 145, 218, 1);
+}
+
+.free-time {
   background-color: rgba(95, 163, 65, 0.6);
+  border: 4px solid rgba(95, 163, 65, 0.6);
 
   .top-grabber, .bottom-grabber {
     font-size: 18px;
@@ -26,13 +36,34 @@
   }
 }
 
-.time-bar {
-  margin: 0px;
-  padding: 0.4em 0.4em;
+.time-bar, .event-boxes {
+  position: absolute;
+  padding: 0px;
+  margin: 0.4em 0em 0em 0.6em;
+
   li {
     list-style-type: none;
-    padding-bottom: 4em;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+    padding: 0px;
   }
 }
 
+.time-bar {
+  top: 2.6em;
+  width: 20%;
+
+  li {
+    height: 12em;
+  }
+}
+
+.event-boxes {
+  top: 3.4em;
+  width: 80%;
+  margin: 0.4em 0em 0em 3em;
+  li {
+    box-sizing: border-box;
+    border-top: 1px solid rgba(0, 0, 0, 0.2);
+    height: 3em;
+  }
+}
+ 
