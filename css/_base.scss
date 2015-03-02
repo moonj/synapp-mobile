@@ -130,6 +130,17 @@ body {
         padding: 1.4em 1em;
       }
 
+      &.list-header {
+        padding: 0.7em 1em;
+        text-transform: uppercase;
+        font-size: 14px;
+        color: rgba(0, 0, 0, 0.4);
+      }
+
+      &.archived, &.checked {
+        opacity: 0.4;
+      }
+
       &.candidate {
         position: relative;
         &.flash-green {

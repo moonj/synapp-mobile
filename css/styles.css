@@ -83,6 +83,13 @@ body {
           border-radius: 0.4em; }
       body .container .cell.calendar {
         padding: 1.4em 1em; }
+      body .container .cell.list-header {
+        padding: 0.7em 1em;
+        text-transform: uppercase;
+        font-size: 14px;
+        color: rgba(0, 0, 0, 0.4); }
+      body .container .cell.archived, body .container .cell.checked {
+        opacity: 0.4; }
       body .container .cell.candidate {
         position: relative; }
         body .container .cell.candidate.flash-green {
@@ -375,6 +382,7 @@ body {
     color: rgba(0, 0, 0, 0.5); }
 
 .checkbox {
+  position: relative;
   display: inline-block;
   vertical-align: middle;
   width: 1em;
@@ -382,5 +390,10 @@ body {
   border-radius: 0.3em;
   margin: -0.2em 0.4em 0em 0em;
   border: 2px solid #3C72B8; }
+  .checkbox img {
+    position: absolute;
+    width: 1.3em;
+    top: -0.3em;
+    left: 0.1em; }
 
 /*# sourceMappingURL=styles.css.map */
