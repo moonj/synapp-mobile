@@ -15,7 +15,7 @@
 /* ===============================================================
 Basic Swiper Styles 
 ================================================================*/
-.swiper-container {
+.swiper-container, .week-swiper, .day-swiper {
 	margin:0 auto;
 	position:relative;
 	overflow:hidden;
@@ -27,7 +27,7 @@ Basic Swiper Styles
 	/* Fix of Webkit flickering */
 	z-index:1;
 }
-.swiper-wrapper {
+.swiper-wrapper, .week-swiper-wrapper, .day-swiper-wrapper {
 	position:relative;
 	width:100%;
 	-webkit-transition-property:-webkit-transform, left, top;
@@ -68,7 +68,7 @@ Basic Swiper Styles
 	transition-timing-function: ease-out;
 	margin: 0 auto;
 }
-.swiper-slide {
+.swiper-slide, .week-swiper-slide, .day-swiper-slide {
 	float: left;
 	-webkit-box-sizing: content-box;
 	-moz-box-sizing: content-box;

@@ -5,11 +5,44 @@ body {
   padding: 0px;
 
 
-  .happy {
-    background-color: green;
-    width: 0px;
-    height: 100px;
+  .week-swiper {
+    position: fixed;
+    top: 3em;
+    background-color: $brand-primary;
+    height: 3em;
+    z-index: 999;
+    width: 100%;
   }
+
+  .week-swiper-slide {
+    width: 100%;
+
+    .day {
+      margin-top: 0.5em;
+      width: 14%;
+      float: left;
+      text-align: center;
+      color: white;
+      box-sizing: border-box;
+
+      span {
+        color: $brand-primary;
+        border-radius: 1em;
+        background-color: white;
+        padding: 0.3em 0.8em;
+      }
+    }
+  }
+
+  .day-swiper-wrapper {
+    height: 100%;
+
+    .day-swiper-slide {
+      width: 100%;
+      position: relative;
+    }
+  }
+
 
   .overlay {
     background-color: rgba(0, 0, 0, 0.8);
@@ -139,7 +172,7 @@ body {
 
       &.archived, &.checked {
         opacity: 0.4;
-      }
+     }
 
       &.candidate {
         position: relative;
@@ -211,6 +244,12 @@ body {
       }
     }
 
+    .response {
+      text-align: center;
+      color: rgba(0, 0, 0, 0.5);
+      font-size: 12px;
+      margin: 0.5em 0em;
+    }
 
     .chat {
       margin: 0em 0.4em;
