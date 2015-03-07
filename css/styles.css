@@ -89,7 +89,8 @@ body {
         width: 60%;
         opacity: 0.4; }
       body .container .blank-action p {
-        font-size: 22px; }
+        font-size: 22px;
+        opacity: 0.4; }
     body .container .cell {
       padding: 1.2em 0.6em 1.2em 1em;
       border-bottom: 1px solid rgba(0, 0, 0, 0.1); }
