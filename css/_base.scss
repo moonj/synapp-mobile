@@ -127,6 +127,22 @@ body {
       padding-top: 6.4em;
     }
 
+    .blank-action {
+      width: 80%;
+      margin: 0px auto;
+      margin-top: 5em;
+      text-align: center;
+
+      img {
+        width: 60%;
+        opacity: 0.4;
+      }
+
+      p {
+        font-size: 22px;
+      }
+    }
+
     .cell {
       padding: 1.2em 0.6em 1.2em 1em;
       border-bottom: 1px solid rgba(0, 0, 0, 0.1);
