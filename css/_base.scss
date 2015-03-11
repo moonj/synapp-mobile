@@ -127,6 +127,17 @@ body {
       padding-top: 6.4em;
     }
 
+    .onboarding-description {
+      margin: 1em 1em 0em 1em;
+      display: block;
+      opacity: 0.4;
+    }
+
+    input[type=submit] {
+      background-color: #fff;
+      color: $brand-primary;
+    }
+
     .blank-action {
       width: 80%;
       margin: 0px auto;

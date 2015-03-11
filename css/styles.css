@@ -80,6 +80,13 @@ body {
     font-size: 16px; }
     body .container.extra-padding {
       padding-top: 6.4em; }
+    body .container .onboarding-description {
+      margin: 1em 1em 0em 1em;
+      display: block;
+      opacity: 0.4; }
+    body .container input[type=submit] {
+      background-color: #fff;
+      color: #3C72B8; }
     body .container .blank-action {
       width: 80%;
       margin: 0px auto;
